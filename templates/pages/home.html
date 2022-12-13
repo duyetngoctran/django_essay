@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} | Welcome{% endblock %}
+{% block content %} 
+
+  
+    <div class="container">
+        {% include 'partials/_alerts.html' %}
+
+        <h2>Tools for Academic</h2>
+        <p class="headline">
+            Compose a stunning paper using our Essay, Plagiarism Checker, Grammar Checker and Much More
+        </p>
+        <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{ request.user.id }}">
+        <input type="hidden" name="email" value="{{ request.user.email }}">
+        <textarea required name="content" id="textarea" class="textarea" maxlength="200" placeholder="Enter essay topic or title..."></textarea>
+        <button id="btn-send" type="submit">Submit</button>
+
+        <div class="counter-container">
+            <p class="mt-2">Total character: <span id="total-counter">0</span></p>
+            <p class="mt-2">Remaning char: <span id="remaining-counter">200</span></p>
+        </div>
+    </form>
+    </div>
+    
+
+
+</html>
+{% endblock %}

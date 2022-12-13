@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} | Essay {% endblock %}
+{% block content %}
+
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
+
+  <section id="dashboard">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pr-3 pl-3" style="text-align: left">
+            <h4>{{ essay.title }} </h4>
+            <br>
+            <span> {{ essay.result_description | linebreaks }}</span>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

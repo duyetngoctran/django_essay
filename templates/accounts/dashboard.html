@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} | User Dashboard {% endblock %}
+{% block content %}
+
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
+
+  <section id="dashboard">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Welcome {{ user.username }}</h2>
+          {% if essays %}
+            <p>Here are the essays that you have inquired about</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Essay</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for essay in essays %}
+                  <tr>
+                    <td>{{ essay.id }}</td>
+                    <td>{{ essay.title | linebreaks }}</td>
+                    <td>
+                      <a class="btn btn-light" href="{% url 'essay_detail' essay.id %}">View</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table> 
+          {% else %} 
+            <p>You have no essay here!</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
