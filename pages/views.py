@@ -20,12 +20,8 @@ def home(request):
         
         if not title:
             messages.error(request, 'This field is required and cannot be empty')
-
             return redirect('home')
-        
-        
-    
-        
+         
         messages.success(request, 'Your request has been submitted, we will get back to you soon')
         
     return render(request, 'pages/home.html')

@@ -77,8 +77,11 @@ WSGI_APPLICATION = "essay.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'essaydb',
+        'USER': 'postgres',
+        'PASSWORD': '10179224',
+        'HOST': 'localhost',
     }
 }
 
