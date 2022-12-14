@@ -1,6 +1,6 @@
 <div class="d-flex shadow-sm  align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
     <div class="mr-auto d-flex align-items-stretch justify-content-between align-content-center text-decoration-none ">
-      <a class="my-0 font-weight-normal"><a class="" style="color: black;" href="/">Essay Typer</a></a>
+      <a class="my-0 font-weight-normal "><a class="text-decoration-none" style="color: black;" href="/">Essay Typer</a></a>
       <!-- <a class="p-2 text-dark" href="#">Essay Typer</a>
       <a class="p-2 text-dark" href="#">
        Grammar Checker</a>
@@ -10,10 +10,12 @@
      
       
       {% if user.is_authenticated %}
+      <a class="my-0 font-weight-normal "><a class="text-decoration-none" style="color: black;" href="{% url 'dashboard' %}">My Essays  |</a></a>
+
       <a href="#" class="mr-1 text-decoration-none", style="color: black;"><i class="fas fa-coins"></i>
         Credit: {{ user.student.credit }}  </a> |
-              <a class="ml-1 mr-3" style="color: black; text-decoration: none;" href="#">
-                {{ user.username }}</a>
+              <!-- <a class="ml-1 mr-3" style="color: black; text-decoration: none;" href="#">
+                {{ user.username }}</a> -->
                
                 <a style="color: black;" href="javascript:{document.getElementById('logout').submit()}""> <i class="fas fa-sign-out-alt"></i> </a>
             <!-- <a class="btn btn-secondary mr-3" style="color: #464E5F; background-color: #E5EAEE; border-color:#E5EAEE;" href="javascript:{document.getElementById('logout').submit()}">Log out</a> -->
